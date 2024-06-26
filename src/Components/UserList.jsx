@@ -10,11 +10,10 @@ const UserList = () => {
             return res.data;
         },
     });
-    console.log(users)
+    // console.log(users)
     const handleImageError = (e) => {
         e.target.src = "https://i.ibb.co/8xdJQ3y/images.png";
     };
-
 
 
     const [selectedUser, setSelectedUser] = useState(null);
