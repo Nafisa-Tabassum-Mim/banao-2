@@ -12,6 +12,7 @@ const UserList = () => {
     });
     // console.log(users)
     const handleImageError = (e) => {
+        e.target.classList.remove("loading");
         e.target.src = "https://i.ibb.co/8xdJQ3y/images.png";
     };
 
@@ -42,7 +43,9 @@ const UserList = () => {
                                 <img
                                     src={user.avatar}
                                     alt="User Avatar"
-                                    onError={handleImageError}
+                                    className="loading"
+                                    onLoad={(e) => e.target.classList.remove('loading')}
+                                    onError={handleImageError}                                    
                                 />
                             </div>
                         </div>
@@ -65,6 +68,8 @@ const UserList = () => {
                                 <img
                                     src={selectedUser.avatar}
                                     alt="User Avatar"
+                                    className="loading"
+                                    onLoad={(e) => e.target.classList.remove('loading')}
                                     onError={handleImageError}
                                 />
                             </div>
